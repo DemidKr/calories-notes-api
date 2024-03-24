@@ -17,23 +17,23 @@ export class Consumption extends Model<Consumption> {
   })
   id: number;
 
-  @Column({ type: DataType.STRING, unique: true, allowNull: false })
+  @Column({ type: DataType.STRING, allowNull: false })
   name: string;
 
   @Column({ type: DataType.DATEONLY, allowNull: false })
   date: Date;
 
   @Column({ type: DataType.INTEGER, allowNull: false })
-  calories: string;
+  calories: number;
 
   @Column({ type: DataType.INTEGER, allowNull: true })
-  fat: string;
+  fat: number;
 
   @Column({ type: DataType.INTEGER, allowNull: true })
-  carbs: string;
+  carbs: number;
 
   @Column({ type: DataType.INTEGER, allowNull: true })
-  protein: string;
+  protein: number;
 
   @ForeignKey(() => Category)
   @Column({ type: DataType.INTEGER, allowNull: false })

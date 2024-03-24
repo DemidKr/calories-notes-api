@@ -5,16 +5,16 @@ export class CreateConsumptionDto {
   name: string;
 
   @IsNotEmpty()
-  calories: string;
+  calories: number;
 
   @IsNotEmpty()
   date: Date;
 
-  fat: string;
+  fat: number;
 
-  carbs: string;
+  carbs: number;
 
-  protein: string;
+  protein: number;
 
   @IsNotEmpty()
   categoryId: number;

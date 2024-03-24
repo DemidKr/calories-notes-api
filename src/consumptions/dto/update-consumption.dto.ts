@@ -1,13 +1,13 @@
 export class UpdateConsumptionDto {
   name: string;
 
-  calories: string;
+  calories: number;
 
-  fat: string;
+  fat: number;
 
-  carbs: string;
+  carbs: number;
 
-  protein: string;
+  protein: number;
 
   categoryId: number;
 }
