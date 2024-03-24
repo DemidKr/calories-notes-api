@@ -36,10 +36,7 @@ export class ConsumptionsController {
 
   @Post()
   @HttpCode(HttpStatus.OK)
-  async createConsumption(
-    @Body() createConsumptionDto: CreateConsumptionDto,
-    @Req() req,
-  ) {
+  async createConsumption(@Body() createConsumptionDto: CreateConsumptionDto) {
     return await this.consumptionsService.create(createConsumptionDto);
   }
 
@@ -48,7 +45,6 @@ export class ConsumptionsController {
   async updateConsumption(
     @Body() updateConsumptionDto: UpdateConsumptionDto,
     @Param('id') id: number,
-    @Req() req,
   ) {
     return await this.consumptionsService.update(id, updateConsumptionDto);
   }

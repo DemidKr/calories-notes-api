@@ -21,7 +21,7 @@ export class CategoriesController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
-  async getAllCategories(@Req() req, @Res() res) {
+  async getAllCategories(@Res() res) {
     const coordinates = await this.categoriesService.findAll();
     return res.send(coordinates);
   }
@@ -34,10 +34,7 @@ export class CategoriesController {
 
   @Post()
   @HttpCode(HttpStatus.OK)
-  async createCategory(
-    @Body() createCategoryDto: CreateCategoryDto,
-    @Req() req,
-  ) {
+  async createCategory(@Body() createCategoryDto: CreateCategoryDto) {
     return await this.categoriesService.create(createCategoryDto);
   }
 
